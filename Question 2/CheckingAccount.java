@@ -21,8 +21,13 @@ public class CheckingAccount {
     }
 
     public void deposit(double depositAmount) {
-        this.balance += depositAmount;
-        System.out.println("$" + df.format(this.balance) + " has been deposited into Account No.:" + this.getNumber());
+        if (depositAmount > 0) {
+            this.balance += depositAmount;
+            System.out.println("$" + df.format(this.balance) + " has been deposited into Account No.:" + this.getNumber());
+        }
+        else{
+            throw new IllegalArgumentException("Deposit Amount needs to be more than $0!");
+        }
     }
 
     public void withdraw(double withdrawalAmount) throws InsufficientFundsException {

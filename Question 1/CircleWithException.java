@@ -45,8 +45,8 @@ public class CircleWithException {
                 System.out.println("The radius must be a positive number");
             }
             System.out.println("The radius of the circle is " + circle.getRadius());
-            System.out.println("The area of the circle is " + circle.getArea());
             System.out.println("The diameter of the circle is " + circle.getDiameter());
+            System.out.println("The area of the circle is " + circle.getArea());
         }
         catch(Exception e){
             System.out.println(e.getMessage());

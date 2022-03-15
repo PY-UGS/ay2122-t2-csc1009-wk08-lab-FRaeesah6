@@ -16,6 +16,8 @@ public class BankDemoTest {
             account.withdraw(withdrawalAmount);
         }catch(InsufficientFundsException e){
             System.out.println("Sorry but your account is short by: $" + df.format(e.getAmount()));
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
         }
     }
 
