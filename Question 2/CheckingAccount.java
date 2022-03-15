@@ -31,7 +31,10 @@ public class CheckingAccount {
     }
 
     public void withdraw(double withdrawalAmount) throws InsufficientFundsException {
-        if (withdrawalAmount > balance) {
+        if(withdrawalAmount < 1){
+            throw new IllegalArgumentException("Withdrawal Amount needs to be more than $0!");
+        }
+        else if (withdrawalAmount > balance) {
             throw new InsufficientFundsException(withdrawalAmount - balance);
         }else {
             this.balance -= withdrawalAmount;
